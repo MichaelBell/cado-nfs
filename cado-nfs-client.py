@@ -2263,7 +2263,7 @@ if __name__ == '__main__':
         except WorkunitClientToFinish as e:
             logging.info("Client finishing: %s. Bye.", e)
             sys.exit(0)
-        if options.single:
+        if options.single or os.path.exists("cado.stop"):
             logging.info("Client processed its WU."
                          " Finishing now as implied by --single")
             sys.exit(0)
